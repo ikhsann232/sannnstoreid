@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SANNSTOREID</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+
+   <canvas id="interactive-bg"></canvas>
+  
+  <div id="preloader">
+  <img src="https://i.ibb.co/cS6MqBDc/letter-s-logo-icon-design-template-elements-9999-65444.jpg" alt="Loading..." />
+</div>
+
+  <canvas id="starfield"></canvas>
+
+  <!-- Toggle Dark Mode -->
+  <div class="dark-mode-toggle">
+    <label class="switch">
+      <input type="checkbox" id="darkToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- KONTEN UTAMA -->
+  <div class="container" data-aos="fade-up">
+    <img class="profile-img" src="https://i.ibb.co/cS6MqBDc/letter-s-logo-icon-design-template-elements-9999-65444.jpg" alt="Foto Profil SANNSTOREID" />
+    <h1>SANNSTOREID</h1>
+    <p class="tagline"><span class="typing" id="typingText"></span></p>
+
+    <div class="social-icons">
+      <a href="https://instagram.com/thereall.sann" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/6282120370582" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fas fa-gamepad"></i></a>
+    </div>
+
+    <div class="links" id="linkContainer">
+      <a href="https://wa.me/6282120370582" class="button">📞 WA JOKI RANK MLBB</a>
+      <a href="https://itsugamarket.com" class="button">💎 TEMPAT TOP UP DIAMOND ALL GAME</a>
+      <a href="https://instagram.com/malky.joki_" class="button">INSTAGRAM JOKI</a>
+      <a href="https://wa.me/6285176852597" class="button">JUAL AKUN DI SINI - FREE FIRE</a>
+      <a href="https://wa.me/6282120370582" class="button">JUAL AKUN DI SINI - MOBILE LEGEND</a>
+      <a href="https://wa.me/6285176852597" class="button">JUAL AKUN DI SINI - VALORANT</a>
+      <a href="https://itsugamarket.com" class="button">DM VIA LOGIN (STOK TERBATAS)</a>
+<a href="https://wa.me/6285176852597" class="button admin">LIVE CHAT ADMIN 1 ( RADITYA )</a>
+<a href="https://wa.me/6282120370582" class="button admin">LIVE CHAT ADMIN 2 ( HASBI )</a>
+      <a href="https://instagram.com/thereall.sann" class="button"> INSTAGRAM ADMIN 1</a>
+      <a href="https://instagram.com/fdhlrdtya" class="button"> INSTAGRAM ADMIN 2</a>
+    </div>
+
+    <p class="typewriter-text"></p>
+    
+<section class="order-form">
+  <h2>Formulir Order Joki Rank Mobile Lejend Via WhatsApp</h2>
+  <form id="waForm">
+    <input type="text" id="nama" placeholder="Nama Lengkap" required>
+
+    <label for="rankAwal"></label>
+<select id="rankAwal" required>
+  <option value="">-- Pilih Rank Awal --</option>
+  <option value="Epic">Epic</option>
+  <option value="Legend">Legend</option>
+  <option value="Mythic">Mythic</option>
+  <option value="Immortal">Immortal</option>
+</select>
+
+<label for="rankTujuan"></label>
+<select id="rankTujuan" required>
+  <option value="">-- Pilih Rank Tujuan --</option>
+  <option value="Legend">Legend</option>
+  <option value="Mythic">Mythic</option>
+  <option value="Glory">Glory</option>
+  <option value="Immortal">Immortal</option>
+</select>
+
+    <textarea id="catatan" placeholder="Catatan untuk penjoki (opsional)"></textarea>
+
+    <button type="submit">Kirim via WhatsApp</button>
+  </form>
+</section>
+
+<script>
+  document.getElementById("waForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const rankAwal = document.getElementById("rankAwal").value;
+    const rankTujuan = document.getElementById("rankTujuan").value;
+    const catatan = document.getElementById("catatan").value;
+
+    const pesan = `Halo, saya ingin order joki rank Mobile Legends:` +
+                  `Nama: ${nama}` +
+                  `Rank Awal: ${rankAwal}` +
+                  `Rank Tujuan: ${rankTujuan}` +
+                  `Catatan: ${catatan || '-'}`;
+
+    const nomorWA = "6282120370582";
+    const urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+
+    window.open(urlWA, "_blank");
+  });
+</script>
+    
+     <section class="invoice-section" id="invoiceSection">
+  <h2>Transaksi Terakhir</h2>
+  <p>Berikut ini Terakhir data pesanan masuk terbaru SANNSTOREID.</p>
+
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th>Tanggal</th>
+        <th>Nomor Invoice</th>
+        <th>No. Handphone</th>
+        <th>Harga</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="invoiceBody">
+      <!-- 15 invoice pertama -->
+      <tr>
+  <td>21-07-2025 09:34:42</td>
+  <td>TPxxxxxxxxxxxx932</td>
+  <td>*********341</td>
+  <td>IDR 53.476</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+      <tr>
+  <td>21-07-2025 09:29:15</td>
+  <td>TPxxxxxxxxxxxx232</td>
+  <td>*********245</td>
+  <td>IDR 43.476</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+      <tr>
+  <td>21-07-2025 09:28:32</td>
+  <td>TPxxxxxxxxxxxx312</td>
+  <td>*********621</td>
+  <td>IDR 74.476</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+     <tr>
+  <td>21-07-2025 09:23:12</td>
+  <td>TPxxxxxxxxxxxx506</td>
+  <td>*********166</td>
+  <td>IDR 53.691</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 09:15:35</td>
+  <td>TPxxxxxxxxxxxx932</td>
+  <td>*********341</td>
+  <td>IDR 53.476</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 09:10:20</td>
+  <td>TPxxxxxxxxxxxx930</td>
+  <td>*********118</td>
+  <td>IDR 51.748</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 09:00:32</td>
+  <td>TPxxxxxxxxxxxx402</td>
+  <td>*********803</td>
+  <td>IDR 46.315</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:59:40</td>
+  <td>TPxxxxxxxxxxxx772</td>
+  <td>*********474</td>
+  <td>IDR 57.624</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:58:22</td>
+  <td>TPxxxxxxxxxxxx117</td>
+  <td>*********770</td>
+  <td>IDR 52.772</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:56:56</td>
+  <td>TPxxxxxxxxxxxx578</td>
+  <td>*********744</td>
+  <td>IDR 51.255</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:55:57</td>
+  <td>TPxxxxxxxxxxxx350</td>
+  <td>*********256</td>
+  <td>IDR 49.914</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:55:27</td>
+  <td>TPxxxxxxxxxxxx470</td>
+  <td>*********769</td>
+  <td>IDR 47.285</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:55:14</td>
+  <td>TPxxxxxxxxxxxx585</td>
+  <td>*********132</td>
+  <td>IDR 45.314</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:52:49</td>
+  <td>TPxxxxxxxxxxxx996</td>
+  <td>*********538</td>
+  <td>IDR 45.449</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:52:03</td>
+  <td>TPxxxxxxxxxxxx109</td>
+  <td>*********602</td>
+  <td>IDR 52.237</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:48:45</td>
+  <td>TPxxxxxxxxxxxx398</td>
+  <td>*********915</td>
+  <td>IDR 47.214</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:48:33</td>
+  <td>TPxxxxxxxxxxxx519</td>
+  <td>*********797</td>
+  <td>IDR 59.485</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+<tr>
+  <td>21-07-2025 08:47:44</td>
+  <td>TPxxxxxxxxxxxx176</td>
+  <td>*********991</td>
+  <td>IDR 59.953</td>
+  <td><span class="status success">SUCCESS</span></td>
+</tr>
+  </tbody>
+  </table>
+
+  <div class="show-more-container">
+    <button id="showMoreBtn">Tampilkan Semua</button>
+  </div>
+</section>
+
+<script>
+ const transactions = [
+  ['20-07-2025 08:49:27', 'TPxxxxxxxxxxxx857', '*********772', 'IDR 405.624', 'SUCCESS'],
+  ['20-07-2025 11:58:01', 'TPxxxxxxxxxxxx812', '*********465', 'IDR 299.341', 'SUCCESS'],
+  ['20-07-2025 15:47:19', 'TPxxxxxxxxxxxx340', '*********503', 'IDR 39.039', 'SUCCESS'],
+  ['20-07-2025 10:23:59', 'TPxxxxxxxxxxxx617', '*********958', 'IDR 313.295', 'SUCCESS'],
+  ['20-07-2025 19:31:31', 'TPxxxxxxxxxxxx871', '*********422', 'IDR 141.361', 'SUCCESS'],
+  ['20-07-2025 11:12:07', 'TPxxxxxxxxxxxx727', '*********104', 'IDR 341.797', 'SUCCESS'],
+  ['20-07-2025 17:48:54', 'TPxxxxxxxxxxxx201', '*********998', 'IDR 26.736', 'SUCCESS'],
+  ['20-07-2025 17:05:22', 'TPxxxxxxxxxxxx377', '*********546', 'IDR 203.220', 'SUCCESS'],
+  ['20-07-2025 15:23:01', 'TPxxxxxxxxxxxx549', '*********266', 'IDR 216.141', 'SUCCESS'],
+  ['20-07-2025 10:38:58', 'TPxxxxxxxxxxxx916', '*********106', 'IDR 84.751', 'SUCCESS'],
+  ['20-07-2025 11:24:10', 'TPxxxxxxxxxxxx674', '*********405', 'IDR 383.761', 'SUCCESS'],
+  ['20-07-2025 21:44:47', 'TPxxxxxxxxxxxx400', '*********124', 'IDR 332.398', 'SUCCESS'],
+  ['20-07-2025 14:31:20', 'TPxxxxxxxxxxxx241', '*********512', 'IDR 112.491', 'SUCCESS'],
+  ['20-07-2025 08:36:51', 'TPxxxxxxxxxxxx292', '*********522', 'IDR 369.366', 'SUCCESS'],
+  ['20-07-2025 21:29:21', 'TPxxxxxxxxxxxx614', '*********688', 'IDR 314.395', 'SUCCESS'],
+  ['20-07-2025 11:35:51', 'TPxxxxxxxxxxxx837', '*********306', 'IDR 307.325', 'SUCCESS'],
+  ['20-07-2025 08:42:39', 'TPxxxxxxxxxxxx899', '*********550', 'IDR 249.271', 'SUCCESS'],
+  ['20-07-2025 13:18:03', 'TPxxxxxxxxxxxx800', '*********176', 'IDR 330.737', 'SUCCESS'],
+  ['20-07-2025 19:14:14', 'TPxxxxxxxxxxxx142', '*********538', 'IDR 272.661', 'SUCCESS'],
+  ['20-07-2025 07:39:52', 'TPxxxxxxxxxxxx761', '*********660', 'IDR 388.142', 'SUCCESS'],
+  ['20-07-2025 20:25:07', 'TPxxxxxxxxxxxx747', '*********998', 'IDR 403.104', 'SUCCESS'],
+  ['20-07-2025 19:39:19', 'TPxxxxxxxxxxxx857', '*********407', 'IDR 171.032', 'SUCCESS'],
+  ['20-07-2025 20:00:45', 'TPxxxxxxxxxxxx176', '*********520', 'IDR 405.906', 'SUCCESS'],
+  ['20-07-2025 12:22:00', 'TPxxxxxxxxxxxx171', '*********943', 'IDR 430.660', 'SUCCESS'],
+  ['20-07-2025 08:32:53', 'TPxxxxxxxxxxxx815', '*********872', 'IDR 207.016', 'SUCCESS'],
+  ['20-07-2025 01:37:10', 'TPxxxxxxxxxxxx201', '*********151', 'IDR 381.516', 'SUCCESS'],
+  ['20-07-2025 05:19:11', 'TPxxxxxxxxxxxx705', '*********726', 'IDR 97.758', 'SUCCESS'],
+  ['20-07-2025 12:03:51', 'TPxxxxxxxxxxxx603', '*********824', 'IDR 281.215', 'SUCCESS'],
+  ['20-07-2025 14:06:43', 'TPxxxxxxxxxxxx277', '*********858', 'IDR 305.140', 'SUCCESS'],
+  ['20-07-2025 14:43:55', 'TPxxxxxxxxxxxx173', '*********762', 'IDR 291.315', 'SUCCESS'],
+  ['20-07-2025 09:42:22', 'TPxxxxxxxxxxxx761', '*********181', 'IDR 312.612', 'SUCCESS'],
+  ['20-07-2025 07:40:03', 'TPxxxxxxxxxxxx413', '*********762', 'IDR 373.296', 'SUCCESS'],
+  ['20-07-2025 07:27:09', 'TPxxxxxxxxxxxx985', '*********370', 'IDR 99.048', 'SUCCESS'],
+  ['20-07-2025 04:11:24', 'TPxxxxxxxxxxxx905', '*********922', 'IDR 64.417', 'SUCCESS'],
+  ['20-07-2025 22:20:30', 'TPxxxxxxxxxxxx738', '*********635', 'IDR 320.971', 'SUCCESS'],
+  ['20-07-2025 22:27:44', 'TPxxxxxxxxxxxx222', '*********915', 'IDR 413.289', 'SUCCESS'],
+  ['20-07-2025 19:02:14', 'TPxxxxxxxxxxxx139', '*********983', 'IDR 106.326', 'SUCCESS'],
+  ['20-07-2025 10:43:08', 'TPxxxxxxxxxxxx862', '*********256', 'IDR 210.269', 'SUCCESS'],
+  ['20-07-2025 08:07:21', 'TPxxxxxxxxxxxx423', '*********847', 'IDR 143.603', 'SUCCESS'],
+  ['20-07-2025 05:15:35', 'TPxxxxxxxxxxxx658', '*********499', 'IDR 420.829', 'SUCCESS']
+['20-07-2025 18:05:50', 'TPxxxxxxxxxxxx727', '*********220', 'IDR 126.403', 'SUCCESS'],
+  ['20-07-2025 03:02:01', 'TPxxxxxxxxxxxx380', '*********509', 'IDR 418.504', 'SUCCESS'],
+  ['20-07-2025 01:19:55', 'TPxxxxxxxxxxxx167', '*********904', 'IDR 233.224', 'SUCCESS'],
+  ['20-07-2025 22:05:22', 'TPxxxxxxxxxxxx485', '*********851', 'IDR 59.669', 'SUCCESS'],
+  ['20-07-2025 22:11:50', 'TPxxxxxxxxxxxx504', '*********393', 'IDR 33.172', 'SUCCESS'],
+  ['20-07-2025 10:09:39', 'TPxxxxxxxxxxxx883', '*********693', 'IDR 97.664', 'SUCCESS'],
+  ['20-07-2025 16:33:00', 'TPxxxxxxxxxxxx520', '*********645', 'IDR 220.575', 'SUCCESS'],
+  ['20-07-2025 05:28:49', 'TPxxxxxxxxxxxx313', '*********261', 'IDR 400.580', 'SUCCESS'],
+  ['20-07-2025 15:45:51', 'TPxxxxxxxxxxxx998', '*********139', 'IDR 228.597', 'SUCCESS'],
+  ['20-07-2025 14:27:32', 'TPxxxxxxxxxxxx385', '*********946', 'IDR 49.054', 'SUCCESS'],
+  ['20-07-2025 04:59:39', 'TPxxxxxxxxxxxx939', '*********607', 'IDR 205.064', 'SUCCESS'],
+  ['20-07-2025 15:50:58', 'TPxxxxxxxxxxxx749', '*********999', 'IDR 418.632', 'SUCCESS'],
+  ['20-07-2025 18:44:48', 'TPxxxxxxxxxxxx318', '*********595', 'IDR 392.821', 'SUCCESS'],
+  ['20-07-2025 15:39:39', 'TPxxxxxxxxxxxx574', '*********477', 'IDR 376.973', 'SUCCESS'],
+  ['20-07-2025 14:48:40', 'TPxxxxxxxxxxxx684', '*********404', 'IDR 30.245', 'SUCCESS'],
+  ['20-07-2025 03:24:13', 'TPxxxxxxxxxxxx615', '*********394', 'IDR 352.639', 'SUCCESS'],
+  ['20-07-2025 22:09:30', 'TPxxxxxxxxxxxx391', '*********559', 'IDR 234.988', 'SUCCESS'],
+  ['20-07-2025 05:10:47', 'TPxxxxxxxxxxxx159', '*********410', 'IDR 68.235', 'SUCCESS'],
+  ['20-07-2025 04:01:30', 'TPxxxxxxxxxxxx336', '*********799', 'IDR 49.843', 'SUCCESS'],
+  ['20-07-2025 12:34:19', 'TPxxxxxxxxxxxx472', '*********342', 'IDR 347.354', 'SUCCESS'],
+  ['20-07-2025 03:35:01', 'TPxxxxxxxxxxxx920', '*********234', 'IDR 78.186', 'SUCCESS'],
+  ['20-07-2025 09:47:34', 'TPxxxxxxxxxxxx400', '*********998', 'IDR 92.114', 'SUCCESS'],
+  ['20-07-2025 14:47:34', 'TPxxxxxxxxxxxx390', '*********946', 'IDR 39.397', 'SUCCESS'],
+  ['20-07-2025 05:36:54', 'TPxxxxxxxxxxxx935', '*********949', 'IDR 71.818', 'SUCCESS'],
+  ['20-07-2025 16:43:41', 'TPxxxxxxxxxxxx284', '*********980', 'IDR 86.871', 'SUCCESS'],
+  ['20-07-2025 01:46:59', 'TPxxxxxxxxxxxx940', '*********475', 'IDR 86.941', 'SUCCESS'],
+  ['20-07-2025 00:27:35', 'TPxxxxxxxxxxxx759', '*********135', 'IDR 98.774', 'SUCCESS'],
+  ['20-07-2025 13:19:51', 'TPxxxxxxxxxxxx464', '*********733', 'IDR 224.124', 'SUCCESS'],
+  ['20-07-2025 15:19:45', 'TPxxxxxxxxxxxx964', '*********519', 'IDR 59.307', 'SUCCESS'],
+  ['20-07-2025 20:08:13', 'TPxxxxxxxxxxxx324', '*********844', 'IDR 69.840', 'SUCCESS'],
+  ['20-07-2025 14:20:35', 'TPxxxxxxxxxxxx617', '*********269', 'IDR 34.385', 'SUCCESS'],
+  ['20-07-2025 16:09:47', 'TPxxxxxxxxxxxx504', '*********200', 'IDR 403.067', 'SUCCESS'],
+  ['20-07-2025 08:47:34', 'TPxxxxxxxxxxxx942', '*********421', 'IDR 178.418', 'SUCCESS'],
+  ['20-07-2025 09:13:03', 'TPxxxxxxxxxxxx475', '*********953', 'IDR 85.279', 'SUCCESS'],
+  ['20-07-2025 10:58:38', 'TPxxxxxxxxxxxx951', '*********670', 'IDR 43.891', 'SUCCESS'],
+  ['20-07-2025 11:23:08', 'TPxxxxxxxxxxxx680', '*********460', 'IDR 396.868', 'SUCCESS'],
+  ['20-07-2025 06:20:35', 'TPxxxxxxxxxxxx298', '*********484', 'IDR 56.282', 'SUCCESS'],
+  ['20-07-2025 04:35:27', 'TPxxxxxxxxxxxx834', '*********318', 'IDR 314.368', 'SUCCESS'],
+  ['20-07-2025 12:17:29', 'TPxxxxxxxxxxxx192', '*********186', 'IDR 46.474', 'SUCCESS'],
+  ['20-07-2025 14:32:34', 'TPxxxxxxxxxxxx661', '*********339', 'IDR 37.711', 'SUCCESS'],
+  ['20-07-2025 00:43:33', 'TPxxxxxxxxxxxx373', '*********249', 'IDR 63.748', 'SUCCESS'],
+  ['20-07-2025 11:13:03', 'TPxxxxxxxxxxxx391', '*********190', 'IDR 71.210', 'SUCCESS'],
+  ['20-07-2025 20:43:31', 'TPxxxxxxxxxxxx363', '*********631', 'IDR 66.128', 'SUCCESS'],
+  ['20-07-2025 16:49:05', 'TPxxxxxxxxxxxx301', '*********704', 'IDR 154.668', 'SUCCESS'],
+  ['20-07-2025 13:52:01', 'TPxxxxxxxxxxxx148', '*********549', 'IDR 35.739', 'SUCCESS'],
+  ['20-07-2025 01:34:29', 'TPxxxxxxxxxxxx355', '*********722', 'IDR 335.542', 'SUCCESS'],
+  ['20-07-2025 05:17:31', 'TPxxxxxxxxxxxx879', '*********557', 'IDR 226.499', 'SUCCESS'],
+  ['20-07-2025 19:01:52', 'TPxxxxxxxxxxxx207', '*********248', 'IDR 30.188', 'SUCCESS'],
+  ['20-07-2025 09:50:43', 'TPxxxxxxxxxxxx284', '*********623', 'IDR 391.014', 'SUCCESS'],
+  ['20-07-2025 13:27:59', 'TPxxxxxxxxxxxx322', '*********190', 'IDR 43.523', 'SUCCESS'],
+  ['20-07-2025 05:30:25', 'TPxxxxxxxxxxxx211', '*********415', 'IDR 162.707', 'SUCCESS'],
+  ['20-07-2025 15:26:57', 'TPxxxxxxxxxxxx217', '*********733', 'IDR 142.122', 'SUCCESS'],
+  ['20-07-2025 09:27:45', 'TPxxxxxxxxxxxx924', '*********677', 'IDR 73.790', 'SUCCESS'],
+  ['20-07-2025 00:27:34', 'TPxxxxxxxxxxxx798', '*********275', 'IDR 54.096', 'SUCCESS'],
+  ['20-07-2025 16:59:39', 'TPxxxxxxxxxxxx745', '*********583', 'IDR 81.700', 'SUCCESS'],
+  ['20-07-2025 13:41:24', 'TPxxxxxxxxxxxx379', '*********856', 'IDR 117.036', 'SUCCESS'],
+  ['20-07-2025 18:32:05', 'TPxxxxxxxxxxxx136', '*********494', 'IDR 223.676', 'SUCCESS'],
+  ['20-07-2025 21:32:03', 'TPxxxxxxxxxxxx774', '*********306', 'IDR 55.168', 'SUCCESS'],
+  ['20-07-2025 03:39:01', 'TPxxxxxxxxxxxx665', '*********978', 'IDR 194.373', 'SUCCESS'],
+  ['20-07-2025 08:56:44', 'TPxxxxxxxxxxxx605', '*********614', 'IDR 56.262', 'SUCCESS'],
+  ['20-07-2025 21:15:40', 'TPxxxxxxxxxxxx243', '*********466', 'IDR 242.878', 'SUCCESS'],
+  ['20-07-2025 22:01:03', 'TPxxxxxxxxxxxx312', '*********626', 'IDR 92.222', 'SUCCESS']
+];
+  ['20-07-2025 16:33:05', 'TPxxxxxxxxxxxx814', '*********429', 'IDR 325.896', 'SUCCESS'],
+  ['20-07-2025 21:33:38', 'TPxxxxxxxxxxxx838', '*********656', 'IDR 94.264', 'SUCCESS'],
+  ['20-07-2025 00:29:21', 'TPxxxxxxxxxxxx488', '*********395', 'IDR 70.925', 'SUCCESS'],
+  ['20-07-2025 19:51:29', 'TPxxxxxxxxxxxx508', '*********262', 'IDR 33.011', 'SUCCESS'],
+  ['20-07-2025 05:21:17', 'TPxxxxxxxxxxxx720', '*********795', 'IDR 69.314', 'SUCCESS'],
+  ['20-07-2025 17:49:55', 'TPxxxxxxxxxxxx368', '*********853', 'IDR 84.134', 'SUCCESS'],
+  ['20-07-2025 11:10:25', 'TPxxxxxxxxxxxx984', '*********101', 'IDR 40.630', 'SUCCESS'],
+  ['20-07-2025 14:16:20', 'TPxxxxxxxxxxxx944', '*********605', 'IDR 63.155', 'SUCCESS'],
+  ['20-07-2025 04:17:29', 'TPxxxxxxxxxxxx677', '*********642', 'IDR 30.727', 'SUCCESS'],
+  ['20-07-2025 08:14:20', 'TPxxxxxxxxxxxx583', '*********715', 'IDR 32.970', 'SUCCESS'],
+  ['20-07-2025 21:31:30', 'TPxxxxxxxxxxxx892', '*********672', 'IDR 84.623', 'SUCCESS'],
+  ['20-07-2025 21:58:29', 'TPxxxxxxxxxxxx491', '*********949', 'IDR 45.127', 'SUCCESS'],
+  ['20-07-2025 11:10:19', 'TPxxxxxxxxxxxx859', '*********700', 'IDR 35.060', 'SUCCESS'],
+  ['20-07-2025 17:01:34', 'TPxxxxxxxxxxxx838', '*********535', 'IDR 93.843', 'SUCCESS']
+];
+
+  const btn = document.getElementById('showMoreBtn');
+  const tbody = document.getElementById('invoiceBody');
+
+  btn.addEventListener('click', () => {
+    moreInvoices.forEach(item => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${item[0]}</td>
+        <td>${item[1]}</td>
+        <td>${item[2]}</td>
+        <td>${item[3]}</td>
+        <td><span class="status ${item[4].toLowerCase()}">${item[4]}</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+    btn.style.display = 'none';
+  });
+</script>
+
+    <section class="leaderboard-section">
+  <h4 class="leaderboard-title">SANNSTOREID HALL OF FAME 💎</h4>
+  <h2 class="leaderboard-heading">Top 5 Sultan Pembelian Terbesar</h2>
+  <p class="leaderboard-subtext">
+    Peringkat pelanggan dengan pembelian tertinggi. Update otomatis setiap hari — siapa yang jadi sultan hari ini?
+  </p>
+
+  <!-- Harian -->
+  <div class="leaderboard-card">
+    <div class="leaderboard-tab">🔥 Pemborong Harian</div>
+    <ul class="leaderboard-list">
+      <li>1. Kevin Maulana 🥇 <span>Rp 489.000</span></li>
+      <li>2. Dewi Rahmawati 🥈 <span>Rp 452.500</span></li>
+      <li>3. Aldy Saputra 🥉 <span>Rp 429.800</span></li>
+      <li>4. Galuh Prasetya <span>Rp 415.300</span></li>
+      <li>5. Intan Maharani <span>Rp 398.000</span></li>
+    </ul>
+  </div>
+
+  <!-- Mingguan -->
+  <div class="leaderboard-card">
+    <div class="leaderboard-tab">🚀 Raja Mingguan</div>
+    <ul class="leaderboard-list">
+      <li>1. Bella Anggraini 🥇 <span>Rp 799.000</span></li>
+      <li>2. Rendi Saputro 🥈 <span>Rp 766.500</span></li>
+      <li>3. Yulia Herlina 🥉 <span>Rp 742.200</span></li>
+      <li>4. Zaki Ramadhan <span>Rp 721.900</span></li>
+      <li>5. Arum Lestari <span>Rp 690.000</span></li>
+    </ul>
+  </div>
+
+  <!-- Bulanan (Tetap) -->
+  <div class="leaderboard-card">
+    <div class="leaderboard-tab">👑 Top 5 - Bulan Ini</div>
+    <ul class="leaderboard-list">
+      <li>1. Alvin Prakoso 🥇 <span>Rp 2.000.000</span></li>
+      <li>2. Nisa Maharani 🥈 <span>Rp 1.862.500</span></li>
+      <li>3. Farhan Aziz 🥉 <span>Rp 1.732.800</span></li>
+      <li>4. Fajar Rendy <span>Rp 1.610.200</span></li>
+      <li>5. Rizka Amelia <span>Rp 1.523.000</span></li>
+    </ul>
+  </div>
+</section>
+    
+<link rel="stylesheet" href="leaderboard.css" />
+
+  
+    <div class="stats-box" data-aos="fade-up">
+  <h3>📊 Statistik Toko Kami</h3>
+  <ul>
+    <li>🔥 Total Order Hari Ini: <span id="orderToday" data-target="328">0</span></li>
+<li>🔥 Total Order Minggu Ini: <span id="activeCustomers" data-target="753">0</span></li>
+    <li>🚀 Pelanggan Aktif Bulan Ini: <span id="ordertoday" data-target="4510"</li>
+<li>⭐ Rating Layanan: <span id="rating" data-target="4.9" data-decimal="true">0</span></li>
+  </ul>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <div class="stats-container">
+  <!-- Baris Pertama -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+      <p class="stat-title">Jumlah Orderan (ALL)</p>
+      <p class="stat-value">15.837</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+      <p class="stat-title">Total Pemasukan</p>
+      <p class="stat-value">Rp 8.367.937</p>
+    </div>
+  </div>
+
+  <!-- Baris Kedua -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+      <p class="stat-title">Saldo Bersih</p>
+      <p class="stat-value">Rp 7.949.540</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+      <p class="stat-title">Saldo Bersih</p>
+      <p class="stat-value">Rp 7.949.540</p>
+    </div>
+  </div>
+</div>
+    
+  <!-- SCRIPT -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Dark mode toggle
+    document.getElementById('darkToggle').addEventListener('change', function () {
+      document.body.classList.toggle('dark-mode', this.checked);
+    });
+
+    // Typing effect
+    const text = "TOPUP | JOKI | JB AKUN ALL GAME";
+    let index = 0;
+    function typeEffect() {
+      if (index < text.length) {
+        document.getElementById("typingText").textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 80);
+      }
+    }
+    window.onload = typeEffect;
+  </script>
+
+   <a href="https://wa.me/6282120370582" class="chat-float" title="Live Chat Admin">
+  <img src="https://i.ibb.co/Y7XFZbN6/user-headset-removebg-preview.png" alt="Chat Admin">
+</a>
+
+  <script>
+  const canvas = document.getElementById("starfield");
+  const ctx = canvas.getContext("2d");
+
+  let stars = [];
+  const numStars = 150;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function createStars() {
+    stars = [];
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        speed: Math.random() * 0.5 + 0.1,
+      });
+    }
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    for (let star of stars) {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+  }
+
+  function moveStars() {
+    for (let star of stars) {
+      star.y += star.speed;
+      if (star.y > canvas.height) {
+        star.y = 0;
+        star.x = Math.random() * canvas.width;
+      }
+    }
+  }
+
+  function animate() {
+    drawStars();
+    moveStars();
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener("resize", () => {
+    resizeCanvas();
+    createStars();
+  });
+
+  resizeCanvas();
+  createStars();
+  animate();
+</script>
+
+  <script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("preloader");
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.visibility = "hidden";
+    }, 2500); // Bisa di ubah durasinya
+  });
+</script>
+
+  <script>
+  const userLang = navigator.language || navigator.userLanguage;
+  const textID = "Selamat datang di SANNSTOREID!";
+  const textEN = "Welcome to SANNSTOREID!";
+  const text = userLang.startsWith("en") ? textEN : textID;
+
+  window.addEventListener("load", () => {
+    const header = document.querySelector("h1");
+    if (header) header.textContent = text;
+  });
+</script>
+
+  <script>
+  function animateCountUp(element, target, isDecimal = false) {
+    let start = 0;
+    const duration = 2000; // durasi animasi (ms)
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentValue = isDecimal
+        ? (progress * target).toFixed(1)
+        : Math.floor(progress * target);
+      element.textContent = currentValue;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".stats-box span").forEach((el) => {
+      const target = parseFloat(el.getAttribute("data-target"));
+      const isDecimal = el.dataset.decimal === "true";
+      animateCountUp(el, target, isDecimal);
+    });
+  });
+</script>
+
+  <script>
+  const canvas = document.getElementById("interactive-bg");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const dots = Array.from({ length: 80 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let dot of dots) {
+      ctx.beginPath();
+      ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(0, 191, 255, 0.5)"; // biru langit transparan
+      ctx.fill();
+      dot.x += dot.dx;
+      dot.y += dot.dy;
+
+      // Bounce dari pinggir layar
+      if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
+      if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
+    }
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+   <script>
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+    counter.innerText = '0';
+
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText.replace(/\D/g, '');
+      const increment = target / 100;
+
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment).toLocaleString();
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    }
+    updateCounter();
+  }
+</script>
+    <script>
+  function formatRupiah(angka) {
+    return angka.toLocaleString("id-ID");
+  }
+
+  function animateCounters() {
+    const counters = document.querySelectorAll(".counter");
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      const isRupiah = counter.nextElementSibling?.classList.contains("currency");
+      let current = 0;
+      const speed = target / 100; // bisa kamu atur kecepatan
+
+      const updateCounter = () => {
+        current += speed;
+        if (current < target) {
+          counter.textContent = isRupiah
+            ? formatRupiah(Math.floor(current))
+            : Math.floor(current);
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = isRupiah
+            ? formatRupiah(target)
+            : target;
+        }
+      };
+
+      updateCounter();
+    });
+  }
+
+  window.addEventListener("load", animateCounters);
+</script>
+  </body>
+  </html>
+
